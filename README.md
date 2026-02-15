@@ -1,18 +1,47 @@
 # 🌲 Mask2Former v3 — Dual-Resolution Class-Balanced Offroad Segmentation
 
 High-resolution semantic segmentation using a **DINOv2 frozen backbone** + a **dual-resolution Mask2Former-style head**, designed for imbalanced off-road terrain classes.
+---
 
-This model was trained for the Hackathon Offroad Segmentation Dataset and includes:
+# 📂 Dataset Setup (Important!)
 
-- ✅ Inverse-frequency class balancing  
-- ✅ Focal-modulated cross entropy  
-- ✅ Weighted Dice loss  
-- ✅ Boundary-aware loss  
-- ✅ Deep supervision  
-- ✅ Memory-efficient masked attention  
-- ✅ High-resolution mask refinement  
+To train the model yourself, you must place the dataset provided by the hackathon organizers in the expected directory structure.
+
+From the training script:
+
+```python
+data_dir = "../Offroad_Segmentation_Training_Dataset/train"
+val_dir  = "../Offroad_Segmentation_Training_Dataset/val"
+```
+
+Your project structure must look like this:
+
+```
+your_project/
+│
+├── train.py
+├── Offroad_Segmentation_Training_Dataset/
+│   ├── train/
+│   │   ├── Color_Images/
+│   │   └── Segmentation/
+│   │
+│   └── val/
+│       ├── Color_Images/
+│       └── Segmentation/
+```
+
+Each image must have a corresponding mask with the same filename.
+
+⚠️ If the dataset is not placed exactly in this structure, training will fail.
 
 ---
+
+# 🚀 How to Train
+
+```bash
+python train.py
+```
+
 
 ## 🧠 Architecture Overview
 
@@ -197,45 +226,6 @@ Class weights are computed using:
 Clamped and normalized for stability.
 
 ---
-
-# 📂 Dataset Setup (Important!)
-
-To train the model yourself, you must place the dataset provided by the hackathon organizers in the expected directory structure.
-
-From the training script:
-
-```python
-data_dir = "../Offroad_Segmentation_Training_Dataset/train"
-val_dir  = "../Offroad_Segmentation_Training_Dataset/val"
-```
-
-Your project structure must look like this:
-
-```
-your_project/
-│
-├── train_script.py
-├── Offroad_Segmentation_Training_Dataset/
-│   ├── train/
-│   │   ├── Color_Images/
-│   │   └── Segmentation/
-│   │
-│   └── val/
-│       ├── Color_Images/
-│       └── Segmentation/
-```
-
-Each image must have a corresponding mask with the same filename.
-
-⚠️ If the dataset is not placed exactly in this structure, training will fail.
-
----
-
-# 🚀 How to Train
-
-```bash
-python train_script.py
-```
 
 The script will:
 
