@@ -1,0 +1,34 @@
+EVALUATION RESULTS (Mask2Former v3 — Dual-Res, Class-Balanced)
+============================================================
+
+Overall Metrics:
+  Mean IoU:            0.2805
+  Mean Dice:           0.4743
+  Mean Pixel Accuracy: 0.6422
+============================================================
+
+Per-Class IoU:
+----------------------------------------
+  Background          : N/A
+  Trees               : 0.0075
+  Lush Bushes         : 0.0024
+  Dry Grass           : 0.4374
+  Dry Bushes          : 0.1617
+  Ground Clutter      : 0.0000
+  Logs                : N/A
+  Rocks               : 0.0593
+  Landscape           : 0.6040
+  Sky                 : 0.9582
+
+Per-Class Dice:
+----------------------------------------
+  Background          : 1.0000
+  Trees               : 0.0281
+  Lush Bushes         : 0.0279
+  Dry Grass           : 0.6077
+  Dry Bushes          : 0.2445
+  Ground Clutter      : 0.0000
+  Logs                : 1.0000
+  Rocks               : 0.1059
+  Landscape           : 0.7502
+  Sky                 : 0.9786
