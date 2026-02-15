@@ -19,7 +19,10 @@ Your project structure must look like this:
 ```
 your_project/
 │
-├── train.py
+├── Offroad_Segmentation_Scripts/
+│   ├── train.py
+|   |── test.py
+|
 ├── Offroad_Segmentation_Training_Dataset/
 │   ├── train/
 │   │   ├── Color_Images/
@@ -28,6 +31,10 @@ your_project/
 │   └── val/
 │       ├── Color_Images/
 │       └── Segmentation/
+├── Offroad_Segmentation_testImages/
+│   ├── Color_Images/
+│   └── Segmentation/
+
 ```
 
 Each image must have a corresponding mask with the same filename.
