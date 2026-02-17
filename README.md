@@ -1,4 +1,4 @@
-# 🌲 Mask2Former v3 — Dual-Resolution Class-Balanced Offroad Segmentation
+# Mask2Former v3 — Dual-Resolution Class-Balanced Offroad Segmentation
 
 High-resolution semantic segmentation using a **DINOv2 frozen backbone** + a **dual-resolution Mask2Former-style head**, designed for imbalanced off-road terrain classes.
 ---
@@ -20,6 +20,7 @@ Your project structure must look like this:
 your_project/
 │
 ├── Offroad_Segmentation_Scripts/
+|   |── ENV_SETUP/
 │   ├── train.py
 |   |── test.py
 |
@@ -42,6 +43,9 @@ Each image must have a corresponding mask with the same filename.
 ⚠️ If the dataset is not placed exactly in this structure, training will fail.
 
 ---
+
+# Enviroment Setup
+Run the setup_env.sh for Linux and setup_env.bat for Windows script to make a conda virtual enviroment named EDU and install the dependencies for this project. To continue, activate this enviroment.
 
 # 🚀 How to Train
 
@@ -112,7 +116,7 @@ This improves boundary sharpness significantly.
 
 ---
 
-## 🖼 Model Architecture Diagram
+## Model Architecture
 
 ```
 Input Image (392 × 672)
@@ -147,7 +151,7 @@ Final Semantic Segmentation Map
 
 **Mask2Former v3 — Dual-Resolution, Class-Balanced**
 
-### 🔹 Overall Metrics
+### Overall Metrics
 
 | Metric | Score |
 |--------|--------|
@@ -157,7 +161,7 @@ Final Semantic Segmentation Map
 
 ---
 
-### 🔹 Per-Class IoU
+### Per-Class IoU
 
 | Class | IoU |
 |-------|------|
@@ -172,7 +176,7 @@ Final Semantic Segmentation Map
 
 ---
 
-### 🔹 Per-Class Dice
+### Per-Class Dice
 
 | Class | Dice |
 |-------|------|
@@ -223,16 +227,6 @@ Total Loss:
 + 0.2 * Boundary Loss
 + Deep Supervision (aux layers)
 ```
-
-Class weights are computed using:
-
-```
-1 / log(1.02 + class_frequency)
-```
-
-Clamped and normalized for stability.
-
----
 
 The script will:
 
